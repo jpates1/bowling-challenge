@@ -48,5 +48,12 @@ RSpec.describe BowlingGame do
     end
   end
 
+  it "returns the correct score for a game with all spares" do
+    game = BowlingGame.new
+    21.times { game.roll(5) }
+    expect(game.score).to eq(150)
+  end
+
+
 
 end
