@@ -1,3 +1,5 @@
+require 'game'
+
 RSpec.describe BowlingGame do
   describe "#roll" do
   it "adds the number of pins knocked down to the rolls array" do
