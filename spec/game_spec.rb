@@ -54,6 +54,30 @@ RSpec.describe BowlingGame do
     expect(game.score).to eq(150)
   end
 
+  context 'when game has a mix of strikes, spares, and open frames' do
+    it 'returns the correct score' do
+      game = BowlingGame.new
+      game.roll(1)
+      game.roll(4)
+      game.roll(4)
+      game.roll(5)
+      game.roll(6)
+      game.roll(4)
+      game.roll(5)
+      game.roll(5)
+      game.roll(10)
+      game.roll(0)
+      game.roll(1)
+      game.roll(7)
+      game.roll(3)
+      game.roll(6)
+      game.roll(4)
+      game.roll(10)
+      game.roll(2)
+      game.roll(8)
+      game.roll(6)
 
-
+      expect(game.score).to eq(133)
+    end
+  end
 end
