@@ -22,4 +22,13 @@ RSpec.describe BowlingGame do
       expect(game.score).to eq(80)
     end
   end
+
+  it "correctly calculates a spare" do
+    game = BowlingGame.new
+    game.roll(5)
+    game.roll(5) # spare
+    game.roll(3)
+    17.times { game.roll(0) }
+    expect(game.score).to eq(16)
+  end
 end
